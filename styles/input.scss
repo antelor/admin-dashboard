@@ -54,7 +54,7 @@ $dash-background: #f3f3f3;
 .container{
     display: grid;
     height: 100%;
-    grid-template-columns: 15% 1fr;
+    grid-template-columns: minmax(210px, 15px) 1fr;
     grid-template-areas: 
     "sidebar main-content";
 }
