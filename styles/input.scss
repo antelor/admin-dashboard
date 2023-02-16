@@ -21,10 +21,12 @@ time, mark, audio, video {
 }
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
+    font-family: "Roboto";
+    height: 100vh;
 }
 ol, ul {
 	list-style: none;
@@ -51,6 +53,7 @@ $dash-background: #f3f3f3;
 /*site css*/
 .container{
     display: grid;
+    height: 100%;
     grid-template-columns: 15% 1fr;
     grid-template-areas: 
     "sidebar main-content";
@@ -63,8 +66,14 @@ $dash-background: #f3f3f3;
     display: grid;
     grid-template-columns: 1;
     grid-template-rows: 3;
-    gap:15px;
+    gap:40px;
     align-content: start;
+    font-size: 1.3rem;
+    padding:10px;
+}
+
+.sidebar ul li{
+    margin-top: 15px;
 }
 
 .main-content{
@@ -95,26 +104,48 @@ button{
 
 .dashboard{
     display: grid;
+    grid-template-columns: 70% 30%;
+    padding-left: 25px;
     grid-template-areas: 
     "projects announcements"
     "projects trending";
     background-color: $dash-background;
 }
 
+.title{
+    margin: 15px 25px 15px 0;
+    font-size: 1.2rem;
+    height: fit-content;
+}
+
 .projects{
     grid-area: projects;
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8% 92%;
+    align-content: start;
+    align-items: start;
+}
+
+.has-border{
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 9px 5px -5px rgba(0,0,0,0.11);
+    -moz-box-shadow: 10px 9px 5px -5px rgba(0,0,0,0.11);
+    box-shadow: 10px 9px 5px -5px rgba(0,0,0,0.11);
+}
+
+.card-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    justify-content: center;
 }
 
 .card{
     background-color: #ffffff;
     border-left:9px solid $card-border;
-    border-radius: 10px;
-    margin:10px;
+    margin: 10px;
+    margin-left:0;
     padding:30px;
-    -webkit-box-shadow: 10px 9px 5px -5px rgba(0,0,0,0.11);
-    -moz-box-shadow: 10px 9px 5px -5px rgba(0,0,0,0.11);
-    box-shadow: 10px 9px 5px -5px rgba(0,0,0,0.11);
 }
 
 .card-title{
@@ -124,20 +155,42 @@ button{
 
 .announcements{
     grid-area: announcements;
+    margin-left: 20px;
+}
+
+.announce-card-container{
+    background-color: #ffffff;
+    padding:10px;
 }
 
 .announce-card{
-    background-color: #ffffff;
-    margin:10px;
-    padding:30px;
+    margin:5px;
+}
+
+.announce-title{
+    font-weight: 600;
+}
+
+.announce-content{
+    color: #7b7b7b;
+}
+
+.horizontalLine{
+    border-bottom: 1px solid rgb(202, 202, 202);
+    width: 90%;
+    margin: auto;
 }
 
 .trending{
+    margin-left: 20px;
     grid-area: trending;
 }
 
-.trending-card{
+.trending-card-container{
     background-color: #ffffff;
+}
+
+.trending-card{
     margin:10px;
-    padding:30px;
+    padding:20px;
 }
